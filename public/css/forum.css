@@ -1,0 +1,49 @@
+.rounded-lg {
+    border-radius: 1rem !important
+}
+
+.text-small {
+    font-size: 0.9rem !important
+}
+
+.pricing {
+    color: #fff
+}
+
+.custom-separator {
+    width: 5rem;
+    height: 6px;
+    border-radius: 1rem
+}
+
+.text-uppercase {
+    letter-spacing: 0.2em
+
+}
+
+.btn-warning {
+    color: #fff
+}
+
+.btn-warning:hover {
+    color: #fff
+}
+
+body {
+    background: #f8c246;
+    background: -webkit-linear-gradient(to right, #f8c246, #f8c246);
+    background: linear-gradient(to right, #f8c246, #f8c246);
+    color: #514B64;
+    min-height: 150vh
+}
+
+.best_answer {
+    color: red;
+    font-weight: bold;
+
+}
+
+.end {
+    Word-break: break-all;
+}
+
