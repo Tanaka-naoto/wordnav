@@ -48,7 +48,10 @@
                         <div class="custom-separator my-4 mx-auto bg-warning"></div>
                         <ul class="list-unstyled mt-5 text-small text-left">
 
-                            @if($most_like_answer)
+                            @if($most_like_answer && $most_like_answer->users_count > 0)
+                            <?php
+
+                            ?>
                             <label for="">いいね1位</label>
 
                                     <li class="h1 font-weight-bold mb-3" style="text-align: center">
