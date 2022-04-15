@@ -22,13 +22,16 @@
                 <a href="{{ route('question.show', $my_answerd_question) }}" style="text-decoration: none; color: black">
                     <div class="bg-white p-5 rounded-lg shadow" style="text-align: left">
 
-                        <div style="text-align: left;
-                        display: inline-block;
-                        background-color: var(--bs-orange);
-                        padding: 0px 2%;
-                        border-radius: 5px;
-                        color: white;
-                        margin-bottom: 2%">{{$my_answerd_question->category->name}}</div>
+                        {{-- <div>{{$my_answerd_question->category->name}}</div> --}}
+                           <!-- for分でカテゴリ別の色を変更-->
+                           @for ($i = 1; $i <= 6; $i++)
+                           @if($my_answerd_question->category_id == $i)
+                               <div class="category_sype" id="<?php echo "category_color".$i; ?>">
+                                   {{$my_answerd_question->category->name}}
+                               </div>
+                           @endif
+                       @endfor
+
                         <h1 class="h6 end text-uppercase font-weight-bold my-4">{{($my_answerd_question->background)}}</h1>
                         <div>言い換えたい言葉</div>
                         <h2 class="h1 end font-weight-bold" style="text-align: center">{{$my_answerd_question->before_word}}</h2>

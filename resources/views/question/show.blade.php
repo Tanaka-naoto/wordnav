@@ -18,8 +18,13 @@
                     <div class="bg-white p-5 rounded-lg shadow" style="text-align: left">
 
                         <div class="wrpdes" style="display: flex; align-items: center; margin-bottom: 3%">
-                            <div style="text-align: left; display: inline-block; background-color: var(--bs-orange); padding: 0px 2%; border-radius: 5px; color: white;">{{$question->category->name}}</div>
-
+                            @for ($i = 1; $i <= 6; $i++)
+                                @if($question->category_id == $i)
+                                    <div class="category_sype" id="<?php echo "category_color".$i; ?>">
+                                        {{$question->category->name}}
+                                    </div>
+                                @endif
+                            @endfor
                         <div class="function_wrp" style="display: flex; margin-left: auto">
 
                             @can('update', $question)  @if(!$question->best_answer)
