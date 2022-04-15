@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->hasMany('App/Models/Question');
     }
 
+    public function answers() {
+
+        return $this->belongsToMany('App\Models\Answer');
+    }
+
     public function favorites() {
 
         return $this->belongsToMany('App\Models\Answer');

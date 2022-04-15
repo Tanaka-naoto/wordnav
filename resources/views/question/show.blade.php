@@ -65,6 +65,7 @@
                             @endif
 
                             @if($question->best_answer)
+
                             <label for="">ベストアンサー</label>
                                 <li class="h1 font-weight-bold" style="text-align: center">
                                     <i class="fa fa-check mr-2 text-primary"></i>
@@ -91,9 +92,17 @@
             <div class="col-lg-12 mb-5 mb-lg-5">
 
                     <div class="bg-white p-5 rounded-lg shadow number" style="text-align: left">
-                        @if($answer->best_answer_id)
-                        <div class="best_answer">ベストアンサー</div>
-                        @endif
+                        <div class="wrp d-flex">
+                            @if($answer->best_answer_id)
+                                <div class="best_answer">ベストアンサー</div>
+                            @endif
+
+                            @if( $answer->user_id == Auth::id())
+                                <p style="color: #ff8b07; margin-left: auto; font-weight:bold">あなたの回答</p>
+                            @endif
+                        </div>
+
+
 
 
                              <!-- いいね処理-->
@@ -115,7 +124,9 @@
 
                                 <h1 class="h6 text-uppercase font-weight-bold my-4">{{$answer->description}}</h1>
 
+
                         </form>
+
 
 
                         @if(!$question->best_answer()->where('best_answer_id', $question->id)->exists() && $question->user_id == Auth::id())

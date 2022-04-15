@@ -13,7 +13,11 @@
 
         {{-- 回答した質問一覧 --}}
     <div class="row text-center align-items-start">
-            @foreach ($my_answerd_questions as $my_answerd_question)
+            @foreach ($my_answerd_questions->unique('question_id') as $my_answerd_question)
+
+            <?php
+                $my_answerd_question = $my_answerd_question->question;
+            ?>
             <div class="col-lg-4 mb-5 mb-lg-5">
                 <a href="{{ route('question.show', $my_answerd_question) }}" style="text-decoration: none; color: black">
                     <div class="bg-white p-5 rounded-lg shadow" style="text-align: left">
@@ -25,7 +29,7 @@
                         border-radius: 5px;
                         color: white;
                         margin-bottom: 2%">{{$my_answerd_question->category->name}}</div>
-                        <h1 class="h6 end text-uppercase font-weight-bold my-4">{{$my_answerd_question->background}}</h1>
+                        <h1 class="h6 end text-uppercase font-weight-bold my-4">{{($my_answerd_question->background)}}</h1>
                         <div>言い換えたい言葉</div>
                         <h2 class="h1 end font-weight-bold" style="text-align: center">{{$my_answerd_question->before_word}}</h2>
 

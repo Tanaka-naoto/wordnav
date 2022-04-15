@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Answer;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -35,7 +36,7 @@ class HomeController extends Controller
 
         $user_id = $user->id;
         $categorys = Category::all();
-        $my_answerd_questions = Question::where('user_id', $user_id)->get();
+        $my_answerd_questions = Answer::where('user_id', $user_id)->get();
 
 
     return view('mypage.answer', compact('my_answerd_questions', 'categorys'));
