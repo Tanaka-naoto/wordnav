@@ -39,16 +39,19 @@
             @foreach ($questions as $question)
             <div class="col-lg-4 mb-5 mb-lg-5">
                 <a href="{{ route('question.show', $question) }}" style="text-decoration: none; color: black">
-                    <div class="bg-white p-5 rounded-lg shadow" style=" ">
+                    <div class="bg-white p-5 rounded-lg shadow" style="">
 
-                        <div style="text-align: left;
-                        display: inline-block;
-                        background-color: var(--bs-orange);
-                        padding: 0px 2.5%;
-                        border-radius: 5px;
-                        color: white;
+                        <!-- for分でカテゴリ別の色を変更-->
+                        @for ($i = 1; $i <= 6; $i++)
+                            @if($question->category_id == $i)
+                                <div class="category_sype" id="<?php echo "category_color".$i; ?>">
+                                    {{$question->category->name}}
+                                </div>
+                            @endif
+                        @endfor
 
-                        margin-bottom: 2%">{{$question->category->name}}</div>
+
+
                         <div class="desc_back">
                             <div style="border-bottom: 1px solid black; display: inline-block">いきさつ</div>
                         <h1 class="h6 end text-uppercase font-weight-bold my-4">{!! nl2br(e($question->background)) !!}</h1>

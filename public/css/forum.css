@@ -47,3 +47,31 @@ body {
     Word-break: break-all;
 }
 
+.category_sype {
+    text-align: left;
+    display: inline-block;
+    padding: 0px 2.5%;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    color: white;
+}
+
+#category_color1 {
+    background-color: var(--bs-orange);
+}
+#category_color2 {
+    background-color: #34bcf4;
+}
+#category_color3 {
+    background-color: #7ab87a;
+}
+#category_color4 {
+    background-color: #f1a6b3;
+}
+#category_color5 {
+    background-color: rgb(198, 114, 234);
+}
+#category_color6 {
+    background-color: rgb(207, 102, 102);
+}
+
